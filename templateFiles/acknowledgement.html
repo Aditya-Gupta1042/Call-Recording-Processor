@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>success</title>
+	<link rel="stylesheet" type="text/css" href="/staticFiles/acknowledgement.css">
+</head> 
+<body> 
+	<header>
+        <h1>Call Recording Processor</h1>
+    </header>
+    
+	<h2>File uploaded successfully</h2> 
+	<h3>File Name: </h3> <p>{{name}}</p> 
+	<h3>Transcipt: </h3> <p>{{transcript}} </p>
+	<h3>Summary: </h3>
+
+	<script type="text/javascript">
+		var summary_string = '{{summary|tojson}}'
+		var summary_string_len = summary_string.length
+		
+		summary_string = summary_string.slice(1,summary_string_len-2)
+	
+		for (let i in summary_string) {
+			if(summary_string[i]=='-') {
+				document.write('<br>', '\u2022')	//u2022 is unicode for bullet point.
+			}
+			else {
+				document.write(summary_string[i])
+			}	
+		}
+	</script>
+	
+	<footer>
+        <p>&copy; 2023 Your Company Name</p>
+    </footer>
+</body> 
+</html>
