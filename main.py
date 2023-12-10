@@ -2,7 +2,7 @@ from fileinput import filename
 from flask import *
 import assemblyai as aai     # openAI API
 
-aai.settings.api_key = "0037f7b7bd364e339486d5fea752c9b1"  #assemblyai API key token
+aai.settings.api_key = "YOUR API TOKEN"  #assemblyai API key token
 
 app = Flask(__name__, template_folder="templateFiles", static_folder="staticFiles") 
 
@@ -35,5 +35,5 @@ def success():
         
         return render_template("acknowledgement.html", name = f.filename, transcript=transcript, summary = summary) 
 
-if __name__ == '__main__': //this the main code
-    app.run(debug=True)//debugging the app run
+if __name__ == '__main__':
+    app.run(debug=True)
