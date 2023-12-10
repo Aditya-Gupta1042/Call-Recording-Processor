@@ -35,5 +35,5 @@ def success():
         
         return render_template("acknowledgement.html", name = f.filename, transcript=transcript, summary = summary) 
 
-if __name__ == '__main__': 
-    app.run(debug=True)
+if __name__ == '__main__': //this the main code
+    app.run(debug=True)//debugging the app run
